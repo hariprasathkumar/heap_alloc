@@ -12,8 +12,8 @@ typedef struct chunk_header {
 #define HEAP_SIZE  (1024 * 1024)
 static char heap[HEAP_SIZE];
 
-static chunk_header_t *free_list = (chunk_header_t *)heap;
-static char *heap_top = heap;
+static chunk_header_t *free_list;
+static char *heap_top;
 
 static void *new_alloc(int size)
 {
